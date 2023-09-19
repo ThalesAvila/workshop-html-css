@@ -1,5 +1,4 @@
 @layer base {
-
     :root {
         --base-size:1rem;
         --scale:1.333;
@@ -147,3 +146,17 @@ h1, h2, h3, h4, h5 {
    }
 }
 
+@media (min-width: 1025px) {
+  .wrapper{
+    max-width:1200px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0 2rem;
+  }
+
+  main {
+    grid-area: 1 / 2 / 5 / 3;
+    display: block;
+    padding-top: 8rem;
+  }
+}
