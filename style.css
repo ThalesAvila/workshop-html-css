@@ -10,6 +10,9 @@
         --teal: #2e6d81;
         --cyan: #7de6f4;
         --black: #050d14; 
+        --vacationer-bg: #f2c57d;
+        --vacationer-text-color: #6d0909;
+        --vacationer-secondary-text-color: #DE8C09;
       
         --h1: calc(var(--h2) * var(--scale));
         --h2: calc(var(--h3) * var(--scale));
@@ -22,7 +25,7 @@
 html {font-size: 100%;} /*16px*/
 
 body {
-  background: var(--teal);
+  background: var(--vacationer-bg);
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.75;
@@ -71,10 +74,10 @@ h1, h2, h3, h4, h5 {
     margin: 0 auto;
   }
   a {
-    color: var(--lime);
+    color: var(--vacationer-text-color);
     }
     a:hover {
-        color: var(--cyan);
+        color: var(--black);
         text-decoration: none;
     }
 }
@@ -100,10 +103,10 @@ h1, h2, h3, h4, h5 {
 
 @layer tours {
     .date {
-        color: var(--tan);
+        color: #DE8C09;
     }
     .club {
-        color: var(--lime);
+        color: var(--vacationer-text-color);
         font-size: var(--h5);
     }
 
@@ -131,7 +134,12 @@ h1, h2, h3, h4, h5 {
    .star {
         width: 18px;
    }
-
+   blockquote {
+    margin: 0;
+   }
+   figcaption {
+    margin-top: 10px;
+   }
    cite {
     display: block;
     margin-top: -15px;
@@ -158,5 +166,60 @@ h1, h2, h3, h4, h5 {
     grid-area: 1 / 2 / 5 / 3;
     display: block;
     padding-top: 8rem;
+  }
+}
+
+@layer skeleton {
+  .cards {
+    display: flex;
+  }
+  
+  .card {
+    margin: 10px;
+    width: 300px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .card .image img {
+    max-width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .card .image .content {
+    padding: 20px 30px;
+  }
+
+  .card.is-loading .image, 
+  .card.is-loading h2,
+  .card.is-loading p {
+    background: #eee;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+  } 
+    
+  
+    .card.is-loading .image {
+      height: 200px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  
+    .card.is-loading h2 {
+      height: 30px;
+    }
+  
+    .card.is-loading p {
+      height: 70px;
+    }
+    
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
   }
 }
