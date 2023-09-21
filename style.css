@@ -99,6 +99,11 @@ h1, h2, h3, h4, h5 {
     header img {
         max-width: 150px;
     }
+
+    .banner img {
+      height: 350px;
+      object-fit: cover;
+    }
 }
 
 @layer tours {
