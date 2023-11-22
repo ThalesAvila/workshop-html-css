@@ -122,6 +122,7 @@
   .club {
     color: var(--lime);
     font-size: var(--h5);
+    cursor: pointer;
   }
 
   @media (min-width: 800px) {
